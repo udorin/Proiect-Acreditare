@@ -18,6 +18,9 @@ public class LoginPage extends PageObject {
    @FindBy(css = "button[value='Login']")
    private WebElementFacade loginButton;
 
+   @FindBy(css = "a[href*='lost-password']")
+   private WebElementFacade lostPassword;//link to lost password page
+
 
 
    public void setEmailField(String email){
@@ -34,6 +37,10 @@ public class LoginPage extends PageObject {
 
     public void checkLoginInvalid(){
        element(loginButton).shouldBeVisible();
+    }
+
+    public void clickLostPasswordLink(){
+       clickOn(lostPassword);
     }
 
 

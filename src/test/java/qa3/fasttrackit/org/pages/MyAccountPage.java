@@ -12,6 +12,7 @@ public class MyAccountPage extends PageObject {
     private WebElementFacade logOutButton;
 
 
+
     public void clickOnLogOutButton(){
         clickOn(logOutButton);
     }
