@@ -1,6 +1,7 @@
 package qa3.fasttrackit.org.steps;
 
 import net.thucydides.core.annotations.Step;
+import org.openqa.selenium.WebElement;
 import qa3.fasttrackit.org.pages.Homepage;
 import qa3.fasttrackit.org.pages.LoginPage;
 import qa3.fasttrackit.org.pages.MyAccountPage;
@@ -12,36 +13,27 @@ public class LoginSteps {
     MyAccountPage myAccountPage;
 
     @Step
-    public void navigateToHomepage(){
-        homepage.open();
+    public void navigateToLoginPage(){
+        loginPage.open();
     }
 
     @Step
-    public void goToLoginPage(){
-        homepage.clickMyAccount();
-        homepage.clickLoginLink();
-    }
-
-    @Step
-    public void loginUser(String email, String password){
+    public void setAccountCredentials(String email,String password){
         loginPage.setEmailField(email);
-        loginPage.setPassField(password);
+        loginPage.setPasswordField(password);
+
+    }
+    @Step
+    public void clickLoginButton(){
         loginPage.clickLoginButton();
     }
-
     @Step
-    public void checkUserIsLoggedIn(){
-        myAccountPage.checkLoggedIn("asdasda asdasd");
-    }
+    public void checkLoginInvalid(){
+        loginPage.checkLoginInvalid();
 
+    }
     @Step
-    public void checkUserNotLoggedIn(){
-        loginPage.checkErrorMessage();
+    public void checkUserIsLoginInSuccesfully(){
+        myAccountPage.checkLogin();
     }
-
-    @Step
-    public void userStillOnLoginPage(){
-        loginPage.checkUserIsOnLoginPage();
-    }
-
 }

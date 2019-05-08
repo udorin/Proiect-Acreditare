@@ -17,35 +17,34 @@ public class LoginTest {
     @Steps
     LoginSteps loginSteps;
 
-    @Test
-    public void loginWithValidCredentials(){
-        loginSteps.navigateToHomepage();
-        loginSteps.goToLoginPage();
-        loginSteps.loginUser("cosmin@fasttrackit.org","123456");
-        loginSteps.checkUserIsLoggedIn();
-    }
+   @Test
+    public void checkLoginWithInvalidCredentials(){
+       loginSteps.navigateToLoginPage();
+       loginSteps.setAccountCredentials("dorin@gmail.com","12345");
+       loginSteps.clickLoginButton();
+       loginSteps.checkLoginInvalid();
+   }
+   @Test
+    public void checkLoginWithInvalidPassword(){
+       loginSteps.navigateToLoginPage();
+       loginSteps.setAccountCredentials("udorin73@gmail.com","test");
+       loginSteps.clickLoginButton();
+       loginSteps.checkLoginInvalid();
+   }
+   @Test
+    public void checkLoginWithInvalidEmail(){
+       loginSteps.navigateToLoginPage();
+       loginSteps.setAccountCredentials("udorin73@gmail.org","nokia1234567890!");
+       loginSteps.clickLoginButton();
+       loginSteps.checkLoginInvalid();
 
+   }
     @Test
-    public void loginWithInvalidPassword(){
-        loginSteps.navigateToHomepage();
-        loginSteps.goToLoginPage();
-        loginSteps.loginUser("cosmin@fasttrackit.org","123adsda");
-        loginSteps.checkUserNotLoggedIn();
-    }
-
-    @Test
-    public void loginWithIncorrectEmail(){
-        loginSteps.navigateToHomepage();
-        loginSteps.goToLoginPage();
-        loginSteps.loginUser("cosmaasdn@fasttrackit.org","123adsda");
-        loginSteps.checkUserNotLoggedIn();
-    }
-    @Test
-    public void loginWithInvalidEmail(){
-        loginSteps.navigateToHomepage();
-        loginSteps.goToLoginPage();
-        loginSteps.loginUser("cosminfasttrackit.org","123adsda");
-        loginSteps.userStillOnLoginPage();
+    public void checkLoginWithValidCredentials(){
+        loginSteps.navigateToLoginPage();
+        loginSteps.setAccountCredentials("udorin73@gmail.com","nokia1234567890!");
+        loginSteps.clickLoginButton();
+        loginSteps.checkUserIsLoginInSuccesfully();
     }
 
 }
