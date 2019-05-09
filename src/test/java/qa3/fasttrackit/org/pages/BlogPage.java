@@ -3,7 +3,9 @@ package qa3.fasttrackit.org.pages;
 import net.serenitybdd.core.annotations.findby.FindBy;
 import net.serenitybdd.core.pages.PageObject;
 import net.serenitybdd.core.pages.WebElementFacade;
+import net.thucydides.core.annotations.DefaultUrl;
 
+@DefaultUrl("http://qa3.fasttrackit.org:8008/blog")
 public class BlogPage extends PageObject {
 
     @FindBy(css = "#comment")
