@@ -5,8 +5,8 @@ import qa3.fasttrackit.org.pages.LoginPage;
 import qa3.fasttrackit.org.pages.MyAccountPage;
 
 public class RegisterSteps {
-    LoginPage loginPage;
-    MyAccountPage myAccountPage;
+   private LoginPage loginPage;
+   private MyAccountPage myAccountPage;
 
 
     @Step

@@ -16,7 +16,7 @@ public class RegisterTest {
     private WebDriver webDriver;
 
     @Steps
-    RegisterSteps registerSteps;
+     private RegisterSteps registerSteps;
 
     @Test
     public void RegisterWithInvalidEmailAddress(){
@@ -43,10 +43,19 @@ public class RegisterTest {
     @Test
     public void RegisterWithValidCredentials(){
         registerSteps.goToRegisterPage();
-        registerSteps.setEmailAddress("udorin73@test1.com");
+        registerSteps.setEmailAddress("udorin73@test2.com");
         registerSteps.setPassword("nokia1234567890!");
        registerSteps.clickRegisterButton();
        registerSteps.checkValidRegister();
+    }
+
+    @Test
+    public void RegisterWithAccountAlreadyExistent(){
+        registerSteps.goToRegisterPage();
+        registerSteps.setEmailAddress("udorin73@gmail.com");
+        registerSteps.setPassword("nokia1234567890!");
+        registerSteps.clickRegisterButton();
+        registerSteps.checkInvalidRegister();
     }
 
 

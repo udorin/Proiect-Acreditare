@@ -8,9 +8,9 @@ import qa3.fasttrackit.org.pages.MyAccountPage;
 
 public class LoginSteps {
 
-    Homepage homepage;
-    LoginPage loginPage;
-    MyAccountPage myAccountPage;
+     private Homepage homepage;
+     private LoginPage loginPage;
+     private MyAccountPage myAccountPage;
 
     @Step
     public void navigateToLoginPage(){
