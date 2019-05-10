@@ -34,7 +34,7 @@ public class BlogPage extends PageObject {
     public void writeComment(String commentF){
         typeInto(comment,commentF);
     }
-    public void writeAuthorString(String AuthorName){
+    public void writeAuthor(String AuthorName){
         typeInto(author, AuthorName);
     }
 
