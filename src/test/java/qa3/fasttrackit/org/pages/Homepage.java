@@ -10,63 +10,63 @@ import net.thucydides.core.annotations.DefaultUrl;
 public class Homepage extends PageObject {
 
     @FindBy(css ="a[title='Login']")
-   private  WebElementFacade sign;//link to sign in and register
+   private  WebElementFacade signLink;//link to sign in and register
 
     @FindBy(css = ".fa-shopping-cart")
-    private WebElementFacade cart;//link to cart page
+    private WebElementFacade cartLink;//link to cart page
 
     @FindBy(css = "a[href*='blog']")
-    private WebElementFacade blog;//link to blog page
+    private WebElementFacade blogLink;//link to blog page
 
     @FindBy(css = "a[href*='shop']")
-    private WebElementFacade shop;//link to shop page
+    private WebElementFacade shopLink;//link to shop page
 
     @FindBy(css = "a[href*='checkout']")
-    private WebElementFacade checkout;//link to checkout page
+    private WebElementFacade checkoutLink;//link to checkout page
 
     @FindBy(css=" #menu-item-1730 a[href*='my-account']")
-    private WebElementFacade myAccount;//link to my account page
+    private WebElementFacade myAccountLink;//link to my account page
 
     @FindBy(css = ".search-btn")
-    private WebElementFacade search;//search button
+    private WebElementFacade searchButton;//search button
 
     @FindBy(css = ".search-field")
     private WebElementFacade searchField;//search field
 
     @FindBy(css = ".search-submit" )
-    private WebElementFacade searchSubmit;//button submit search
+    private WebElementFacade searchSubmitButton;//button submit search
 
     public void clickSignInLink(){
 
-        clickOn(sign);
+        clickOn(signLink);
     }
 
     public void clickCart(){
-        clickOn(cart);
+        clickOn(cartLink);
     }
 
     public void clickBlog(){
-        clickOn(blog);
+        clickOn(blogLink);
     }
     public void clickShop(){
-        clickOn(shop);
+        clickOn(shopLink);
     }
     public void clickCheckout(){
-        clickOn(checkout);
+        clickOn(checkoutLink);
     }
 
     public void clickMyAccount(){
-        clickOn(myAccount);
+        clickOn(myAccountLink);
     }
     public void clickSearchBtn(){
-        clickOn(search);
+        clickOn(searchButton);
     }
 
     public void writeIntoSearchFiel(String text){
         typeInto(searchField,text);
     }
     public void clickSubmitSearchBtn(){
-        clickOn(searchSubmit);
+        clickOn(searchSubmitButton);
     }
 
     }

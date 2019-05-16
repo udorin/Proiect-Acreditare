@@ -22,33 +22,32 @@ public class LoginPage extends PageObject {
    private WebElementFacade lostPassword;//link to lost password page
 
     @FindBy(css = "#reg_email")
-    private WebElementFacade emailReg;//input field for e-mail when you want to register
+    private WebElementFacade emailRegField;//input field for e-mail when you want to register
 
     @FindBy(css = "#reg_password")
-    private WebElementFacade passwordReg;//input field password when you want to register
+    private WebElementFacade passwordRegField;//input field password when you want to register
 
     @FindBy(css = "button[value='Register']")
-    private WebElementFacade register;//button register
-    @FindBy(css = ".col-2 h2")
-    private WebElementFacade iRegister;//
+    private WebElementFacade registerButton;//button register
+
 
 
 
     public void setEmailReg(String email){
-        typeInto(emailReg,email);
+        typeInto(emailRegField,email);
     }
     public void setPasswordReg(String password){
-        typeInto(passwordReg,password);
+        typeInto(passwordRegField,password);
     }
     public void clickRegister(){
-        clickOn(register);
+        clickOn(registerButton);
     }
 public void checkInvalidRegister(){
-        element(register).shouldBeVisible();
+        element(registerButton).shouldBeVisible();
 }
 
 public void checkInvalidRegister1(){
-        element(register).shouldNotBeEnabled();
+        element(registerButton).shouldNotBeEnabled();
 }
 
 

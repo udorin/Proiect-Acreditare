@@ -7,55 +7,55 @@ import net.serenitybdd.core.pages.WebElementFacade;
 public class CartPage extends PageObject {
 
     @FindBy(css = ".product-name a")
-    private WebElementFacade product;//product name
+    private WebElementFacade productText;//product name
 
     @FindBy(css = ".remove")
-    private  WebElementFacade  remove;//link remove product
+    private  WebElementFacade  removeLink;//link remove product
 
     @FindBy(css = "button[name='update_cart']")
-    private WebElementFacade update;//update button
+    private WebElementFacade updateButton;//update button
 
     @FindBy(css = "input[step='1']")
-    private  WebElementFacade quantity;//field input quantity
+    private  WebElementFacade quantityField;//field input quantity
 
     @FindBy(css = ".restore-item")
-    private WebElementFacade undo;//button restore product deleted
+    private WebElementFacade undoLink;//button restore product deleted
 
     @FindBy(css = ".woocommerce-message")
     private WebElementFacade messageUpdate;
 
 
     public void checkProduct(String productName){
-        product.shouldContainText(productName);
+        productText.shouldContainText(productName);
     }
 
     public void clickProduct(){
-        clickOn(product);
+        clickOn(productText);
     }
     public void clickRemove(){
-        clickOn(remove);
+        clickOn(removeLink);
     }
 
     public void clickUpdate(){
-        clickOn(update);
+        clickOn(updateButton);
     }
     public void addQuantity(String qty){
-        typeInto(quantity,qty);
+        typeInto(quantityField,qty);
     }
 
     public void clickUndo(){
-        clickOn(undo);
+        clickOn(undoLink);
     }
     public void checkRemove(){
-        element(undo).shouldBeVisible();
+        element(undoLink).shouldBeVisible();
     }
 
     public void checkUpdate(String message){
       element(messageUpdate).shouldContainText(message);
 
     }
-    public void checkUpdate1(String qty){
-        quantity.getValue().equals(qty);
+    public void checkUpdate1(String qty) {
+    quantityField.shouldContainElements(qty);
 
     }
 

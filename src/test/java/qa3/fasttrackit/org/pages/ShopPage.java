@@ -12,19 +12,19 @@ public class ShopPage extends PageObject {
     private WebElementFacade sort;//drop menu sort
 
     @FindBy(css = "a[data-product_id='73']")
-    private WebElementFacade readMore;//read more link from album product
+    private WebElementFacade readMoreLink;//read more link from album product
 
     @FindBy(css = "a[href*='48']")
-    private WebElementFacade addToCart;//ad to cart button beanie
+    private WebElementFacade addToCartButton;//ad to cart button beanie
 
     @FindBy(css = "img[src*='beanie-2']")
-    private WebElementFacade productPage;//link beanie product page
+    private WebElementFacade productPageLink;//link beanie product page
 
     @FindBy(css = ".next")
-    private WebElementFacade nextPage;//button next page
+    private WebElementFacade nextPageButton;//button next page
 
     @FindBy(css = ".prev")
-    private  WebElementFacade prevPage;//button prev page
+    private  WebElementFacade prevPageButton;//button prev page
 
 
     public void selectOptionSort(int option,String text){
@@ -33,20 +33,20 @@ public class ShopPage extends PageObject {
     }
 
     public void clickReadMore(){
-        clickOn(readMore);
+        clickOn(readMoreLink);
     }
 
     public void clickAddToCart(){
-        clickOn(addToCart);
+        clickOn(addToCartButton);
     }
     public void clickProductPage(){
-        clickOn(productPage);
+        clickOn(productPageLink);
     }
     public void goNextPage(){
-        clickOn(nextPage);
+        clickOn(nextPageButton);
     }
     public void goPrevPage(){
-        clickOn(prevPage);
+        clickOn(prevPageButton);
     }
 
 

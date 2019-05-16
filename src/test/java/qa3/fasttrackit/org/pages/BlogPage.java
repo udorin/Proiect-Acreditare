@@ -9,53 +9,53 @@ import net.thucydides.core.annotations.DefaultUrl;
 public class BlogPage extends PageObject {
 
     @FindBy(css = "#comment")
-    private WebElementFacade comment;//comment field
+    private WebElementFacade commentField;//comment field
 
     @FindBy(css = "#author")
-    private WebElementFacade author;// field for author name
+    private WebElementFacade authorField;// field for author name
 
     @FindBy(css = "#email")
-    private WebElementFacade email;// field for email author
+    private WebElementFacade emailField;// field for email author
 
     @FindBy(css = "#url")
-    private WebElementFacade website;//field for enter author website
+    private WebElementFacade websiteField;//field for enter author website
 
     @FindBy(css = "#submit")
-    private WebElementFacade postComment;//button post comment
+    private WebElementFacade postCommentButton;//button post comment
 
     @FindBy(css = ".fn")
-    private WebElementFacade authorComment;// is author of the comment
+    private WebElementFacade authorCommentText;// is author of the comment
 
     @FindBy(css = "p strong")
-    private WebElementFacade error;//error text if you dont enter email and name
+    private WebElementFacade errorText;//error text if you dont enter email and name
 
 
 
     public void writeComment(String commentF){
-        typeInto(comment,commentF);
+        typeInto(commentField,commentF);
     }
     public void writeAuthor(String AuthorName){
-        typeInto(author, AuthorName);
+        typeInto(authorField, AuthorName);
     }
 
     public void writeEmail(String emaliA){
-        typeInto(email,emaliA);
+        typeInto(emailField,emaliA);
     }
 
     public void writeWebsite(String websiteA){
-        typeInto(website,websiteA);
+        typeInto(websiteField,websiteA);
     }
     public void clickPost(){
-        clickOn(postComment);
+        clickOn(postCommentButton);
     }
 
     public void checkComment(String authorName){
-        authorComment.shouldContainText(authorName);
+        authorCommentText.shouldContainText(authorName);
     }
 
 
     public void errorComment(String errorMessage){
-        error.shouldContainText(errorMessage);
+        errorText.shouldContainText(errorMessage);
     }
 
 
