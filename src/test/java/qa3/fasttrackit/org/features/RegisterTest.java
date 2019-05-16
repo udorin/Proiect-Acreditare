@@ -30,8 +30,8 @@ public class RegisterTest {
     @Test
     public void RegisterWithInvalidCredentials(){
         registerSteps.goToRegisterPage();
-        registerSteps.setEmailAddress(Utils.generateRandomString(10));
-        registerSteps.setPassword(Utils.generateRandomString(10));
+        registerSteps.setEmailAddress(Utils.generateRandomString(10) );
+        registerSteps.setPassword(Utils.generateRandomString(6));
         registerSteps.checkInvalidRegister1();
     }
     @Test
