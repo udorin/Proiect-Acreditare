@@ -7,6 +7,7 @@ import qa3.fasttrackit.org.steps.LoginSteps;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.openqa.selenium.WebDriver;
+import utils.Utils;
 
 @RunWith(SerenityRunner.class)
 public class LoginTest {
@@ -15,26 +16,26 @@ public class LoginTest {
     private WebDriver driver;
 
     @Steps
-    LoginSteps loginSteps;
+    private LoginSteps loginSteps;
 
    @Test
     public void checkLoginWithInvalidCredentials(){
        loginSteps.navigateToLoginPage();
-       loginSteps.setAccountCredentials("dorin@gmail.com","12345");
+       loginSteps.setAccountCredentials(Utils.generateRandomString(10),Utils.generateRandomString(10));
        loginSteps.clickLoginButton();
        loginSteps.checkLoginInvalid();
    }
    @Test
     public void checkLoginWithInvalidPassword(){
        loginSteps.navigateToLoginPage();
-       loginSteps.setAccountCredentials("udorin73@gmail.com","test");
+       loginSteps.setAccountCredentials(Utils.email,Utils.generateRandomString(6));
        loginSteps.clickLoginButton();
        loginSteps.checkLoginInvalid();
    }
    @Test
     public void checkLoginWithInvalidEmail(){
        loginSteps.navigateToLoginPage();
-       loginSteps.setAccountCredentials("udorin73@gmail.org","nokia1234567890!");
+       loginSteps.setAccountCredentials(Utils.generateRandomString(12),Utils.password);
        loginSteps.clickLoginButton();
        loginSteps.checkLoginInvalid();
 
@@ -42,7 +43,7 @@ public class LoginTest {
     @Test
     public void checkLoginWithValidCredentials(){
         loginSteps.navigateToLoginPage();
-        loginSteps.setAccountCredentials("udorin73@gmail.com","nokia1234567890!");
+        loginSteps.setAccountCredentials(Utils.email,Utils.password);
         loginSteps.clickLoginButton();
         loginSteps.checkUserIsLoginInSuccesfully();
     }

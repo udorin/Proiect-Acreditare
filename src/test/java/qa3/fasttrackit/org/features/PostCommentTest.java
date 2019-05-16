@@ -7,6 +7,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.openqa.selenium.WebDriver;
 import qa3.fasttrackit.org.steps.CommentSteps;
+import utils.Utils;
 
 @RunWith(SerenityRunner.class)
 public class PostCommentTest {
@@ -21,15 +22,15 @@ public class PostCommentTest {
     @Test
     public void tryPostCommentWithoutEmail_AuthorName_Website(){
         commentSteps.navigateToBlogPage();
-        commentSteps.writeCommentIntoCommentField("hello, i dont like this product");
+        commentSteps.writeCommentIntoCommentField(Utils.generateRandomString(10)+ "  " + Utils.generateRandomString(10));
         commentSteps.clickPostCommentButton();
         commentSteps.checkPostCommentWasFailed("ERROR");
     }
     @Test
     public void tryPostCommentWithoutEmail_AuthorName(){
         commentSteps.navigateToBlogPage();
-        commentSteps.writeCommentIntoCommentField("Hello, there");
-        commentSteps.writeAuthorWebsite("www.test.com");
+        commentSteps.writeCommentIntoCommentField(Utils.generateRandomString(15));
+        commentSteps.writeAuthorWebsite(Utils.generateRandomString(9));
         commentSteps.clickPostCommentButton();
         commentSteps.checkPostCommentWasFailed("ERROR");
 
@@ -37,9 +38,9 @@ public class PostCommentTest {
     @Test
     public void tryPostCommentWithoutEmail(){
         commentSteps.navigateToBlogPage();
-        commentSteps.writeCommentIntoCommentField("hi there");
-        commentSteps.writeAuthorName("test");
-        commentSteps.writeAuthorWebsite("www.test.com");
+        commentSteps.writeCommentIntoCommentField(Utils.generateRandomString(5) + " " + Utils.generateRandomString(10));
+        commentSteps.writeAuthorName(Utils.generateRandomString(5));
+        commentSteps.writeAuthorWebsite(Utils.generateRandomString(10));
         commentSteps.clickPostCommentButton();
         commentSteps.checkPostCommentWasFailed("ERROR");
     }
@@ -47,10 +48,10 @@ public class PostCommentTest {
     @Test
     public void tryPostCommentWithInvalidEmail(){
         commentSteps.navigateToBlogPage();
-        commentSteps.writeCommentIntoCommentField("hi there");
-        commentSteps.writeAuthorName("test");
-        commentSteps.writeAuthorEmail("testtest.com");
-        commentSteps.writeAuthorWebsite("www.test.com");
+        commentSteps.writeCommentIntoCommentField(Utils.generateRandomString(10));
+        commentSteps.writeAuthorName(Utils.generateRandomString(5));
+        commentSteps.writeAuthorEmail(Utils.generateRandomString(6));
+        commentSteps.writeAuthorWebsite(Utils.generateRandomString(5));
         commentSteps.clickPostCommentButton();
         commentSteps.checkPostCommentWasFailed("ERROR");
 
@@ -59,10 +60,10 @@ public class PostCommentTest {
     @Test
     public void tryPostCommentWithValidCredentials(){
         commentSteps.navigateToBlogPage();
-        commentSteps.writeCommentIntoCommentField("hi there");
+        commentSteps.writeCommentIntoCommentField(Utils.generateRandomString(10));
         commentSteps.writeAuthorName("test");
-        commentSteps.writeAuthorEmail("test@test.com");
-        commentSteps.writeAuthorWebsite("www.test.com");
+        commentSteps.writeAuthorEmail(Utils.email);
+        commentSteps.writeAuthorWebsite(Utils.generateRandomString(9));
         commentSteps.clickPostCommentButton();
         commentSteps.checkPostCommentWasSuccessfully("test");
 
