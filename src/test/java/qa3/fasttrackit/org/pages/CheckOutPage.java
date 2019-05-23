@@ -21,7 +21,7 @@ public class CheckOutPage extends PageObject {
     @FindBy(css = "input[name='billing_city']")
     private WebElementFacade cityField;//input field city name
 
-    @FindBy(css = "input[name='billing_postcode']")
+    @FindBy(css = "[name=\"billing_postcode\"]")
     private WebElementFacade zipCodeField;//input field zip code
 
     @FindBy(css = "input[name='billing_phone']")

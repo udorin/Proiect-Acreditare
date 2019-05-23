@@ -43,12 +43,16 @@ public class CheckoutSteps {
         checkOutPage.clickPlaceOrderButton();
     }
     @Step
-    public void checkCheckoutWasSuccesfully(){
+    public void checkPlaceOrderWasSuccesfully(){
         checkOutPage.checkCheckout();
     }
     @Step
-    public void checkCheckoutFailed(){
+    public void checkPlaceOrderFailed(){
         checkOutPage.errorCheckout();
+    }
+    @Step
+    public void setCityName(String nameCity){
+        checkOutPage.setCity(nameCity);
     }
 
 
