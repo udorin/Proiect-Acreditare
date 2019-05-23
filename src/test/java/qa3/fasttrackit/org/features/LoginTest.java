@@ -48,4 +48,12 @@ public class LoginTest {
         loginSteps.checkUserIsLoginInSuccesfully();
     }
 
+    @Test
+    public void checkLoginWithoutCredentials(){
+
+       loginSteps.navigateToLoginPage();
+       loginSteps.clickLoginButton();
+       loginSteps.checkLoginInvalid();
+    }
+
 }

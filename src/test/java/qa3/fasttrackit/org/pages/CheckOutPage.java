@@ -31,7 +31,43 @@ public class CheckOutPage extends PageObject {
     private WebElementFacade emailField;// input field email address
 
     @FindBy(css = "button[value='Place order']")
-    private WebElementFacade placeOrderField;//button place order
+    private WebElementFacade placeOrderButton;//button place order
+    @FindBy(css = ".woocommerce-error")
+    private WebElementFacade errorCheckout;
+
+    public void errorCheckout(){
+        errorCheckout.shouldBeVisible();
+    }
+    public void checkCheckout(){
+        checkoutField.shouldBeVisible();
+    }
+    public void setFirstName(String firstName){
+        typeInto(firstNameField,firstName);
+    }
+    public void setLastName(String lastName){
+        typeInto(lastNameField,lastName);
+    }
+    public void setAdress(String adress){
+        typeInto(streetAdressField,adress);
+    }
+    public void setCity(String city){
+        typeInto(cityField,city);
+
+    }
+    public void setZipCode(String zipCode){
+        typeInto(zipCodeField,zipCode);
+    }
+    public void setPhone(String phone){
+        typeInto(phoneField,phone);
+    }
+    public void setEmail(String email){
+        typeInto(emailField,email);
+    }
+    public void clickPlaceOrderButton(){
+        clickOn(placeOrderButton);
+    }
+    
+
 
 
 
