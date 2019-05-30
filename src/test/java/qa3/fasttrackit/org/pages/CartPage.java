@@ -24,6 +24,9 @@ public class CartPage extends PageObject {
     @FindBy(css = ".woocommerce-message")
     private WebElementFacade messageUpdate;
 
+    @FindBy(css = "input[title='Qty']")
+    private WebElementFacade quantityF;
+
 
     public void checkProduct(String productName){
         productText.shouldContainText(productName);
@@ -57,7 +60,8 @@ public class CartPage extends PageObject {
 
     /////
     public void checkUpdate1(String qty) {
-    quantityField.shouldContainElements(qty);
+
+      quantityF.containsValue(qty);
 
     }
 
