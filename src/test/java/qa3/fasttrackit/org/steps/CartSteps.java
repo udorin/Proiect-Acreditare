@@ -60,10 +60,7 @@ public class CartSteps{
     public void checkUpdateQuantity(String message){
        cartPage.checkUpdate(message);
     }
-    @Step
-    public void checkUpdateFromProductPage(String qty){
-       cartPage.checkUpdate1(qty);
-    }
+
     @Step
     public void clickProductName(){
        cartPage.clickProduct();

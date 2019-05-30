@@ -32,12 +32,15 @@ public class CheckOutPage extends PageObject {
 
     @FindBy(css = "button[value='Place order']")
     private WebElementFacade placeOrderButton;//button place order
+
+
     @FindBy(css = ".woocommerce-error")
     private WebElementFacade errorCheckout;
 
     public void errorCheckout(){
         errorCheckout.shouldBeVisible();
     }
+
     public void checkCheckout(){
         checkoutField.shouldBeVisible();
     }

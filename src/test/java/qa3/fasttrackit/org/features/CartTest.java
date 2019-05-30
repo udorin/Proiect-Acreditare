@@ -54,18 +54,7 @@ public class CartTest {
         cartSteps.clickUpdateButton();
         cartSteps.checkUpdateQuantity("Cart updated.");
     }
-    @Test
 
-    public void updateProductQuantityFromProductPage(){
-        cartSteps.navigateToShopPage();
-        cartSteps.addProductToCart();
-        cartSteps.navigateToCartPage();
-        cartSteps.clickProductName();
-        cartSteps.insertNewQuantity("2");
-        cartSteps.clickAddButton();
-        cartSteps.navigateToCartPage();
-        cartSteps.checkUpdateFromProductPage("3");
-    }
 
 
 

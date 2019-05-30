@@ -58,12 +58,6 @@ public class CartPage extends PageObject {
 
     }
 
-    /////
-    public void checkUpdate1(String qty) {
-
-      quantityF.containsValue(qty);
-
-    }
 
 
 }
