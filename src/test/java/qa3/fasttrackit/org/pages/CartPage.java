@@ -54,6 +54,8 @@ public class CartPage extends PageObject {
       element(messageUpdate).shouldContainText(message);
 
     }
+
+    /////
     public void checkUpdate1(String qty) {
     quantityField.shouldContainElements(qty);
 
